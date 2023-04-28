@@ -221,7 +221,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         move = (Derecha * 0 + Adelante * 0);//para que cambie la direcion con la camara
 
 
-        if ((x != 0 || y != 0) && animacionacabada && !atacado)//condiciones para que no se mueva cuando esta atacando o ha sido golpeado
+        if ((x != 0 || y != 0) && animacionacabada && !atacado &&!isOnSlope)//condiciones para que no se mueva cuando esta atacando o ha sido golpeado
         {
             move = (Derecha * x + Adelante * y) * speed;//para que cambie la direcion con la camara y camine
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.1f);
@@ -277,6 +277,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
         if (animacionacabada)
         {
+            EstaEnRampa();
             controller.Move(move * Time.deltaTime);
         }
 
@@ -482,8 +483,10 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         isOnSlope = Vector3.Angle(Vector3.up,hitNormal) >= controller.slopeLimit;
         if (isOnSlope)
         {
-            move.x += hitNormal.x * 10 ;
-            move.z += hitNormal.z * 10;
+            move.x += hitNormal.x * 2 ;
+            move.z += hitNormal.z * 2;
+
+            move.y += -4f; 
             
         }
     }
