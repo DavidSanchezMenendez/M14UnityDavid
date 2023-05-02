@@ -275,7 +275,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
        move += inercia;
         move.y = CharacterVelocityY;
 
-        if (animacionacabada)
+        if (true)
         {
             EstaEnRampa();
             controller.Move(move * Time.deltaTime);
@@ -310,7 +310,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
                 MovimientoPlayer();
 
-
+                AtaqueEspada();
 
                 DobleSalto();
 
@@ -431,15 +431,21 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     public void AtaqueEspada()
     {
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")&& animacionacabada)
         {
             animacionacabada = false;
             animPlayer.SetTrigger("Ataque");
+            StartCoroutine(Ataque());
 
           
 
         }
 
+    }
+    IEnumerator Ataque()
+    {
+        yield return new WaitForSeconds(0.19f);
+        animacionacabada = true;
     }
     public void ataqueFinalizado()
     {
