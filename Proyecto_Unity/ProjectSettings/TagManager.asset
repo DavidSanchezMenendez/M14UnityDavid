@@ -15,6 +15,7 @@ TagManager:
   - ZonaMuerte
   - Mapa
   - MaderaDestructible
+  - ZonaMuerte1
   layers:
   - Default
   - TransparentFX

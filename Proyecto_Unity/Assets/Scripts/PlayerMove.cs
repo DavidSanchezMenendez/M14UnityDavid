@@ -61,8 +61,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     public bool isOnSlope = false;
     public Vector3 hitNormal;
 
-
-  
+    
 
     private void Awake()//la instancia patron singleton
     {
@@ -72,7 +71,6 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         }
         else
         {
-            Destroy(gameObject);
         }
         SujetoObservable.GenerarInstancia();
     }
@@ -82,7 +80,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     void Start()
     {
 
-
+        //animPlayer = GetComponent<Animator>();
         cam = GameObject.Find("Camera").GetComponent<Camera>();
 
         
@@ -223,6 +221,8 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
         if ((x != 0 || y != 0) && animacionacabada && !atacado &&!isOnSlope)//condiciones para que no se mueva cuando esta atacando o ha sido golpeado
         {
+            animPlayer.SetFloat("x", x);
+            animPlayer.SetFloat("y", y);
             move = (Derecha * x + Adelante * y) * speed;//para que cambie la direcion con la camara y camine
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.1f);
 
@@ -356,11 +356,13 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         if (Input.GetButtonDown("Jump") && groundedPlayer)//si esta en el suelo y puslas espacio vas a saltar
         {
             CharacterVelocityY = 0;//resetaamos la velocidad de el eje Y para evitar errores y luego aplicamos la fuerza del salto
+            animPlayer.SetTrigger("Saltar");
             CharacterVelocityY += JumpSpeed;
         }
         if (Input.GetButtonDown("Jump") && !groundedPlayer && !dobleSaltoCompletado)//si no esta en el suelo pulsamos otra vez el espacio hara un doble salto, el booleano hace que solo entre una vez.
         {
             CharacterVelocityY = 0;
+            animPlayer.SetTrigger("Saltar");
             CharacterVelocityY += segundosalto;
             dobleSaltoCompletado = true;//este bool evita que salte mas de una vez, una vez toque el suelo podrá volver a entrar al doble salto
         }
