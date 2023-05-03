@@ -231,15 +231,15 @@ ModelImporter:
       name: MoverColaDerecha
       takeName: Take 001
       internalID: 6234510843852800090
-      firstFrame: 255
-      lastFrame: 269
+      firstFrame: 240
+      lastFrame: 270
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

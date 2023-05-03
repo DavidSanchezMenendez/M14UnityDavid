@@ -16,6 +16,7 @@ TagManager:
   - Mapa
   - MaderaDestructible
   - ZonaMuerte1
+  - Espada
   layers:
   - Default
   - TransparentFX

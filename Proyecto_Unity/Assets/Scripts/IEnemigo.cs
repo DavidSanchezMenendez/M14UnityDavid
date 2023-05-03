@@ -8,5 +8,6 @@ public interface IEnemigo//Una clase interface para que cuando llame a hacer un 
     float PoderGolpeao();
     int DañoEnemigo();
     void Ataques();
+    void GolpeEspada();
 }
 

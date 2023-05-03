@@ -43,4 +43,16 @@ public class Lagrima : EnemigoController,IEnemigo
     {
         return damage;
     }
+    public void GolpeEspada()
+    {
+        Debug.Log("Holaa");
+        vida--;
+        if (vida <= 0)
+        {
+            muerto.SetActive(true);
+
+            muerto.transform.parent = null;
+            Destroy(gameObject);
+        }
+    }
 }

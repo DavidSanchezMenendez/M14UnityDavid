@@ -10,8 +10,8 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
     public static PlayerMove playerInstance { get; private set; }
     public Animator animPlayer;
-   
 
+    public GameObject espada;
     public Vector3 move;
     public CharacterController controller;
     public float CharacterVelocityY, JumpSpeed = 10f, segundosalto = 20f, speed = 10f, x, y,gravedad=50f;
@@ -134,6 +134,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
     private void OnTriggerEnter(Collider other)
     {
+
         if(other.tag == "ZonaMuerte")
         {
             Debug.Log("Muere");
@@ -313,6 +314,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
                 AtaqueEspada();
 
                 DobleSalto();
+                Agachado();
 
 
 
@@ -425,13 +427,24 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
     }
   
-  
+  void Agachado()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            animPlayer.SetBool("Agachado",true);
+        }
+        else
+        {
+            animPlayer.SetBool("Agachado", false);
+        }
+
+    }
  
 
     public void AtaqueEspada()
     {
 
-        if (Input.GetButtonDown("Fire1")&& animacionacabada)
+        if (Input.GetMouseButton(0) && animacionacabada)
         {
             animacionacabada = false;
             animPlayer.SetTrigger("Ataque");
@@ -447,11 +460,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         yield return new WaitForSeconds(0.19f);
         animacionacabada = true;
     }
-    public void ataqueFinalizado()
-    {
-    
-        animacionacabada = true;
-    }
+
     
     public void Jump()
     {

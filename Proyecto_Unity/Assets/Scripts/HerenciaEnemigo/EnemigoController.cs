@@ -28,12 +28,21 @@ public class EnemigoController : MonoBehaviour
         agente = GetComponent<NavMeshAgent>();
         animEnemigo = GetComponent<Animator>();
         trail = GetComponentInChildren<TrailRenderer>();
-       // rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
-    
-    
-   
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Espada"&& !PlayerMove.playerInstance.animacionacabada)
+        {
+
+
+            transform.GetComponent<IEnemigo>().GolpeEspada();
+
+        }
+    }
+
+
     public void SeguirPlayer()
     {
         float tiempoAtaque = 1f;
@@ -77,6 +86,15 @@ public class EnemigoController : MonoBehaviour
         else
         {
             agente.destination = posicionInicial;
+            if (agente.destination == posicionInicial)
+            {
+                animEnemigo.speed = 0;
+                animEnemigo.SetBool("Idle", true);
+            }
+            else
+            {
+                animEnemigo.SetBool("Idle", false);
+            }
         }
     }
     public void enableTrail()
