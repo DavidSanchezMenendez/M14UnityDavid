@@ -39,7 +39,7 @@ public class Lagrima : EnemigoController,IEnemigo
     {
         //No ataca
     }
-    public int DañoEnemigo()
+    public int DanoEnemigo()
     {
         return damage;
     }

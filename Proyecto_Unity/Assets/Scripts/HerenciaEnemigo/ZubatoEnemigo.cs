@@ -44,7 +44,7 @@ public class ZubatoEnemigo : EnemigoController, IEnemigo
 
     }
 
-    public int DañoEnemigo()
+    public int DanoEnemigo()
     {
         return damage;
     }

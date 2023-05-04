@@ -6,7 +6,7 @@ public interface IEnemigo//Una clase interface para que cuando llame a hacer un 
 {
     void Golpeado();
     float PoderGolpeao();
-    int DañoEnemigo();
+    int DanoEnemigo();
     void Ataques();
     void GolpeEspada();
 }

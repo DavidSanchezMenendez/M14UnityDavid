@@ -27,9 +27,10 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     public bool groundedPlayer,entrarUnaVez=true;
 
     bool dobleSaltoCompletado = false;
-    
 
 
+    public List<GameObject> trampa1 = new List<GameObject>();
+    public List<GameObject> vidas = new List<GameObject>();
 
     public Transform player;
   
@@ -79,6 +80,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
     void Start()
     {
+        vida = 3;
 
         //animPlayer = GetComponent<Animator>();
         cam = GameObject.Find("Camera").GetComponent<Camera>();
@@ -139,8 +141,14 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         {
             Debug.Log("Muere");
         }
-        
-      
+        if (other.tag == "Trampa")
+        {
+            foreach (var trampa in trampa1)
+            {
+                trampa.GetComponent<Rigidbody>().isKinematic = false;
+            }
+        }
+
 
         if (other.gameObject.CompareTag("GolpeoEnemigo")) //cuando golpea un enemigo este da un rebote        
         {
@@ -168,13 +176,14 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             inercia = direccionGolpe ;
             CharacterVelocityY += 12f;
 
-            
-            vida -= other.GetComponentInParent<IEnemigo>().DañoEnemigo();
+           
+            vida -= other.GetComponentInParent<IEnemigo>().DanoEnemigo();
+            vidas[vida].SetActive(false);
 
 
 
 
-           // StartCoroutine(Golpeado(other.transform));
+            // StartCoroutine(Golpeado(other.transform));
 
 
 
