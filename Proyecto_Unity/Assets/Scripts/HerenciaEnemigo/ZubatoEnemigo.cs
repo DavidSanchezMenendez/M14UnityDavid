@@ -20,7 +20,7 @@ public class ZubatoEnemigo : EnemigoController, IEnemigo
 
         distanciaEspera = 6f;
         vida = 1;
-        damage = 2;
+        damage = 1;
         poderGolpe = 50;
 
     }

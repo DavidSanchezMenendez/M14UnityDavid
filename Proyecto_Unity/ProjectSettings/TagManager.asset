@@ -18,6 +18,7 @@ TagManager:
   - ZonaMuerte1
   - Espada
   - Trampa
+  - Habilidad
   layers:
   - Default
   - TransparentFX

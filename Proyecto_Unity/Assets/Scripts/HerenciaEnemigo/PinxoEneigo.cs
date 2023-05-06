@@ -21,7 +21,7 @@ public class PinxoEneigo : EnemigoController, IEnemigo
 
         distanciaEspera = 4f;
         vida = 1;
-        damage = 3;
+        damage = 1;
         poderGolpe = 100;
 
     }

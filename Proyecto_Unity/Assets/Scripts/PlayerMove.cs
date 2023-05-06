@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour, ICambiodeState
 {
     public int vida = 3;
     public int contadorPlanear = -1;
-
+    public GameObject muerteUI, menuWin;
+   
     public static PlayerMove playerInstance { get; private set; }
     public Animator animPlayer;
 
@@ -17,7 +19,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     public float CharacterVelocityY, JumpSpeed = 10f, segundosalto = 20f, speed = 10f, x, y,gravedad=50f;
 
     //Camera
-
+    public GameObject playerMuerto;
     public bool atacado = false,planeando=false;
     private Camera cam;
     public Transform TargetaSeguir;
@@ -84,8 +86,9 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
         //animPlayer = GetComponent<Animator>();
         cam = GameObject.Find("Camera").GetComponent<Camera>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
 
-        
 
 
         currentstate = State.DobleSalto;
@@ -140,6 +143,11 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         if(other.tag == "ZonaMuerte")
         {
             Debug.Log("Muere");
+            Muerte();
+        }
+        if (other.tag == "Habilidad")
+        {
+           menuWin.SetActive(true);
         }
         if (other.tag == "Trampa")
         {
@@ -179,6 +187,10 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
            
             vida -= other.GetComponentInParent<IEnemigo>().DanoEnemigo();
             vidas[vida].SetActive(false);
+            if (vida <=0)
+            {
+                Muerte();
+            }
 
 
 
@@ -521,6 +533,25 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     {
         hitNormal = hit.normal;
 
+    }
+    void Muerte()
+    {
+        playerMuerto.SetActive(true);
+        playerMuerto.transform.parent = null;
+        transform.gameObject.SetActive(false);
+        Invoke("spawner", 3f);
+    }
+    void spawner()
+    {
+        muerteUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        // SceneManager.LoadScene(0);
+    }
+    public void respawn()
+    {
+
+        SceneManager.LoadScene(1);
     }
 
     /* void MirarEnemigo()
