@@ -12,7 +12,7 @@ public class Lagrima : EnemigoController,IEnemigo
 
     private void Awake()
     {
-        vida = 1;
+        vida = 6;
         damage = 1;
         poderGolpe = 50;
         distanciaEspera = 0f;
@@ -20,6 +20,7 @@ public class Lagrima : EnemigoController,IEnemigo
     public void Golpeado()
     {
         vida--;
+        vfxEnemigo.Play();
         if (vida<=0)
         {
             muerto.SetActive(true);
@@ -47,6 +48,7 @@ public class Lagrima : EnemigoController,IEnemigo
     {
         Debug.Log("Holaa");
         vida--;
+        vfxEnemigo.Play();
         if (vida <= 0)
         {
             muerto.SetActive(true);

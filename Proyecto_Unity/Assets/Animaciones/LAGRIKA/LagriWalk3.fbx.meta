@@ -3,7 +3,27 @@ guid: 24bd447733e6b4635b80874febc360d0
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AWA
+    second: {fileID: 2100000, guid: 774dbfd99c5d79e48863b6cb488d6257, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AWA_BODY
+    second: {fileID: 2100000, guid: a122af54ec72dab46afc0f79d00e7426, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BLANCO
+    second: {fileID: 2100000, guid: c47bd0223bb401949acb07db17048875, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OJO
+    second: {fileID: 2100000, guid: 7ff1b62e260d8034a8f11f2291a1cf20, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

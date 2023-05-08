@@ -21,9 +21,11 @@ public class EnemigoController : MonoBehaviour
     // Start is called before the first frame update
     public Animator animEnemigo;
     float tiempo=5f;
+    public ParticleSystem vfxEnemigo;
     
     private void Start()
     {
+        vfxEnemigo = GetComponentInChildren<ParticleSystem>();
         posicionInicial = transform.position;
         agente = GetComponent<NavMeshAgent>();
         animEnemigo = GetComponent<Animator>();

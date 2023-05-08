@@ -56,14 +56,14 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     public bool animacionacabada = true;
 
 
-
+    public List<ParticleSystem> particulas = new List<ParticleSystem>();//1-salto2-caminar
 
     RaycastHit ray;
 
 
     public bool isOnSlope = false;
     public Vector3 hitNormal;
-
+    int contadorAtaque;
     
 
     private void Awake()//la instancia patron singleton
@@ -248,7 +248,11 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             move = (Derecha * x + Adelante * y) * speed;//para que cambie la direcion con la camara y camine
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.1f);
 
-
+           // Instantiate(particulas[1], transform.position, Quaternion.identity);
+        }
+        else
+        {
+           
         }
 
 
@@ -381,6 +385,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             CharacterVelocityY = 0;//resetaamos la velocidad de el eje Y para evitar errores y luego aplicamos la fuerza del salto
             animPlayer.SetTrigger("Saltar");
             CharacterVelocityY += JumpSpeed;
+            particulas[0].Play();
         }
         if (Input.GetButtonDown("Jump") && !groundedPlayer && !dobleSaltoCompletado)//si no esta en el suelo pulsamos otra vez el espacio hara un doble salto, el booleano hace que solo entre una vez.
         {
@@ -388,6 +393,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             animPlayer.SetTrigger("Saltar");
             CharacterVelocityY += segundosalto;
             dobleSaltoCompletado = true;//este bool evita que salte mas de una vez, una vez toque el suelo podrá volver a entrar al doble salto
+            particulas[0].Play();
         }
 
     }
@@ -460,25 +466,37 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         }
 
     }
- 
+
 
     public void AtaqueEspada()
     {
-
+        if (Input.GetMouseButton(0) && contadorAtaque == 1)
+        {
+            animPlayer.SetTrigger("Ataque1");
+        }
         if (Input.GetMouseButton(0) && animacionacabada)
         {
+            contadorAtaque = 0;
             animacionacabada = false;
+            contadorAtaque++;
             animPlayer.SetTrigger("Ataque");
             StartCoroutine(Ataque());
 
-          
+
+
+
+
+
+
+
 
         }
-
     }
     IEnumerator Ataque()
     {
+
         yield return new WaitForSeconds(0.19f);
+       
         animacionacabada = true;
     }
 

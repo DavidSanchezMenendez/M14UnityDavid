@@ -28,6 +28,7 @@ public class PinxoEneigo : EnemigoController, IEnemigo
     public void Golpeado()
     {
         vida--;
+        vfxEnemigo.Play();
         if (vida <= 0)
         {
             muerto.SetActive(true);
