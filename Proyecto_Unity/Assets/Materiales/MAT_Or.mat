@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_Or
-  m_Shader: {fileID: 4800000, guid: aa39e15a9f5d0ed47aa0951572b2dc9e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8fa84e1c8f3a97b4bb416e8eb087630e, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -52,10 +52,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _NoiseTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _NormalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -65,10 +61,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -87,15 +79,6 @@ Material:
     - _HighIntensity: 1.5
     - _LightScalar: 1.16
     - _LowIntensity: 0.89
-    - _MBAmplitude: 1.5
-    - _MBAmplitudeOffset: 2
-    - _MBDefaultBending: 0
-    - _MBFrequency: 1.11
-    - _MBFrequencyOffset: 0
-    - _MBMaxHeight: 10
-    - _MBPhase: 1
-    - _MBWindDir: 0
-    - _MBWindDirOffset: 20
     - _Metallic: 1
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -105,21 +88,17 @@ Material:
     - _RimAlpha: 0.209
     - _RimDropOff: 0.036
     - _RimPower: 0.793
-    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - __dirty: 1
     m_Colors:
     - _Color: {r: 1, g: 0.8664268, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
     - _LowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _NoisePannerSpeed: {r: 0.05, g: 0.03, b: 0, a: 0}
-    - _NoiseTextureTilling: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
