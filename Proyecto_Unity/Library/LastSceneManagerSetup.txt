@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/nivel 4 texturizado.unity
+- path: Assets/Scenes/LVL_3_MARC.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

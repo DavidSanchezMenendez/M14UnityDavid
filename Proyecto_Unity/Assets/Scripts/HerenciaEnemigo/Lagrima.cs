@@ -12,7 +12,7 @@ public class Lagrima : EnemigoController,IEnemigo
 
     private void Awake()
     {
-        vida = 6;
+        vida = 1;
         damage = 1;
         poderGolpe = 50;
         distanciaEspera = 0f;

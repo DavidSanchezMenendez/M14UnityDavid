@@ -12,10 +12,10 @@ public class MiniBossEnemigo : EnemigoController,IEnemigo
 
     private void Awake()
     {
-        vida = 2;
+        vida = 3;
         damage = 1;
         poderGolpe = 80;
-        distanciaEspera = 4f;
+        distanciaEspera = 6f;
     }
     public void Golpeado()
     {

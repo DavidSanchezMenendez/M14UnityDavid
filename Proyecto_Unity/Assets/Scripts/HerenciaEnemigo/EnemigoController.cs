@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class EnemigoController : MonoBehaviour
 {
+    public Material newMaterial; // El nuevo material que quieres asignar
+
+    public Renderer enemyRenderer ; // 
     public int vida;
     public int damage;
     public Rigidbody rb;
@@ -25,12 +28,16 @@ public class EnemigoController : MonoBehaviour
     
     private void Start()
     {
+        enemyRenderer=GetComponentInChildren<Renderer>() ;
         vfxEnemigo = GetComponentInChildren<ParticleSystem>();
         posicionInicial = transform.position;
         agente = GetComponent<NavMeshAgent>();
         animEnemigo = GetComponent<Animator>();
         trail = GetComponentInChildren<TrailRenderer>();
         rb = GetComponent<Rigidbody>();
+        
+        newMaterial.SetFloat("Disolver",0.5f);
+        //enemyRenderer.material = newMaterial;
     }
     // Update is called once per frame
     public void OnTriggerEnter(Collider other)
@@ -38,7 +45,7 @@ public class EnemigoController : MonoBehaviour
         if (other.transform.tag == "Espada"&& !PlayerMove.playerInstance.animacionacabada)
         {
 
-
+            PlayerMove.playerInstance.particulas[2].Play();
             transform.GetComponent<IEnemigo>().GolpeEspada();
 
         }

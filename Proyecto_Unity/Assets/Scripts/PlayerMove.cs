@@ -38,9 +38,9 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
   
 
     public Vector3 inercia;
-  
+
     //public static event PlayerDeath OnPlayerDeath;
-   
+    public bool invensible = false;
 
     public State currentstate;
 
@@ -168,7 +168,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             contadorPlanear++;
 
         }
-        if (other.tag == "Enemigo")//si el enemigo te golpea a ti te va a alejar de un golpe.
+        if (other.tag == "Enemigo"&&!invensible)//si el enemigo te golpea a ti te va a alejar de un golpe.
         {
             float poderGolpe = other.GetComponentInParent<IEnemigo>().PoderGolpeao();
             //RecibirGolpe(other.transform);
@@ -184,9 +184,10 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             inercia = direccionGolpe ;
             CharacterVelocityY += 12f;
 
-           
+            particulas[3].Play();
             vida -= other.GetComponentInParent<IEnemigo>().DanoEnemigo();
             vidas[vida].SetActive(false);
+           
             if (vida <=0)
             {
                 Muerte();
@@ -233,7 +234,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         Adelante.Normalize();
 
 
-
+      
         // move = (Derecha *x + Adelante * y ) * speed;//para que cambie la direcion con la camara
 
 
@@ -250,10 +251,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
            // Instantiate(particulas[1], transform.position, Quaternion.identity);
         }
-        else
-        {
-           
-        }
+
 
 
 
@@ -280,9 +278,13 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
 
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            inercia =  transform.forward* 200f;
+            invensible = true;
+        }
 
 
-      
         if (inercia.magnitude >= 0)//para que una vez golpeado no se pare en seco, hacemos que vaya bajando la velocidad del golpe
         {
             float emuje = 24;//como menor sea mas pdoersos ser? el golpe
@@ -294,6 +296,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
                 inercia = Vector3.zero;
                 atacado = false;
+                invensible = false;
             }
             
 
@@ -480,7 +483,11 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             animacionacabada = false;
             contadorAtaque++;
             animPlayer.SetTrigger("Ataque");
+            
+
+
             StartCoroutine(Ataque());
+
 
 
 
@@ -558,7 +565,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         playerMuerto.transform.parent = null;
         transform.gameObject.SetActive(false);
         Invoke("spawner", 3f);
-    }
+    }   
     void spawner()
     {
         muerteUI.SetActive(true);
@@ -568,8 +575,20 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     }
     public void respawn()
     {
+        string sceneName = SceneManager.GetActiveScene().name;
+        switch (sceneName)
+        {
+            case "Scene1y2":
+                SceneManager.LoadScene(1);
+                break;
+            case "Scene3":
+                SceneManager.LoadScene(2);
+                break;
 
-        SceneManager.LoadScene(1);
+            default:
+                break;
+        }
+        
     }
 
     /* void MirarEnemigo()
