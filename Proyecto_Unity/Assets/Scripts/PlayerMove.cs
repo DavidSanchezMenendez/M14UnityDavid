@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 {
     public int vida = 3;
     public int contadorPlanear = -1;
-    public GameObject muerteUI, menuWin;
+    public GameObject muerteUI, menuWin,alaDelta;
    
     public static PlayerMove playerInstance { get; private set; }
     public Animator animPlayer;
@@ -248,8 +248,13 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             animPlayer.SetFloat("y", y);
             move = (Derecha * x + Adelante * y) * speed;//para que cambie la direcion con la camara y camine
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.1f);
+            particulas[1].gameObject.SetActive(true);
 
-           // Instantiate(particulas[1], transform.position, Quaternion.identity);
+            // Instantiate(particulas[1], transform.position, Quaternion.identity);
+        }
+        else
+        {
+            particulas[1].gameObject.SetActive(false);
         }
 
 
@@ -382,6 +387,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         {
             CharacterVelocityY -= gravedad * Time.deltaTime;
             EstaEnRampa();
+            particulas[1].gameObject.SetActive(false);
         }
         if (Input.GetButtonDown("Jump") && groundedPlayer)//si esta en el suelo y puslas espacio vas a saltar
         {
@@ -408,7 +414,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         if (groundedPlayer && entrarUnaVez &&planeando)//Esto es basicamente para que contador sume si toca el suelo mientras esta planeando, si no el contador se desincroniza y hay errores
         {
             contadorPlanear++;
-            entrarUnaVez = false;
+            entrarUnaVez = false;   
            
         }
         if(groundedPlayer && CharacterVelocityY < 0 )//lo mismo que con el doble salto pero con planear
@@ -432,6 +438,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             planeando = true;
             CharacterVelocityY = 0;
             contadorPlanear++;//este contador sirve para que el jugador cada vez que de al espacio deje de planear o vuelva a planear
+           
 
 
         }
@@ -439,12 +446,16 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         {
             
             CharacterVelocityY -= 2f * Time.deltaTime;
-           
+            animPlayer.SetBool("Planeando", true);
+            alaDelta.SetActive(true);
+
         }
         else
         {
             CharacterVelocityY -= gravedad * Time.deltaTime;
             planeando = false;
+            animPlayer.SetBool("Planeando", false);
+            alaDelta.SetActive(false);
         }
 
 
@@ -462,10 +473,16 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         if (Input.GetKey(KeyCode.LeftControl))
         {
             animPlayer.SetBool("Agachado",true);
+            controller.height = 1.23f;
+            controller.center = new Vector3(0, 0.23f, 0);
+            speed = 20;
         }
         else
         {
             animPlayer.SetBool("Agachado", false);
+            controller.height = 2.81f;
+            controller.center = new Vector3(0, 0.78f, 0);
+            speed = 10;
         }
 
     }

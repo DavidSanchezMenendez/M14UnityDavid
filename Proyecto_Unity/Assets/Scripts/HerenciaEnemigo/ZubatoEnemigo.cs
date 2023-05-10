@@ -20,7 +20,7 @@ public class ZubatoEnemigo : EnemigoController, IEnemigo
 
         distanciaEspera = 6f;
         vida = 1;
-        damage = 1;
+        damage = 0;
         poderGolpe = 50;
 
     }
@@ -35,6 +35,7 @@ public class ZubatoEnemigo : EnemigoController, IEnemigo
             muerto.transform.parent = null;
 
             Destroy(this.gameObject);
+            Destroy(muerto,2f);
         }
     }
     public void Ataques()
@@ -58,6 +59,7 @@ public class ZubatoEnemigo : EnemigoController, IEnemigo
 
             muerto.transform.parent = null;
             Destroy(gameObject);
+            Destroy(muerto, 2f);
         }
     }
 }

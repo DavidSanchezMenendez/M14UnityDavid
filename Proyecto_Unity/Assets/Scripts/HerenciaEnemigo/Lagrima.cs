@@ -27,6 +27,7 @@ public class Lagrima : EnemigoController,IEnemigo
 
             muerto.transform.parent = null;
                 Destroy(gameObject);
+            Destroy(muerto,2f);
         }
     }
     
@@ -54,7 +55,9 @@ public class Lagrima : EnemigoController,IEnemigo
             muerto.SetActive(true);
 
             muerto.transform.parent = null;
+         
             Destroy(gameObject);
+            Destroy(muerto, 2f);
         }
     }
 }
