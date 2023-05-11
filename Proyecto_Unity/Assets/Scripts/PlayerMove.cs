@@ -1,29 +1,30 @@
   using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+
 using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour, ICambiodeState
 {
     public int vida = 3;
     public int contadorPlanear = -1;
-    public GameObject muerteUI, menuWin,alaDelta;
+    public GameObject muerteUI, menuWin,alaDelta,espada;
+    public List<GameObject> trails = new List<GameObject>();
    
     public static PlayerMove playerInstance { get; private set; }
     public Animator animPlayer;
 
-    public GameObject espada;
+   
     public Vector3 move;
     public CharacterController controller;
-    public float CharacterVelocityY, JumpSpeed = 10f, segundosalto = 20f, speed = 10f, x, y,gravedad=50f;
+    public float CharacterVelocityY, JumpSpeed = 10f, segundosalto = 20f, speed = 10f, x, y,gravedad=50f,tiempodash;
 
     //Camera
     public GameObject playerMuerto;
     public bool atacado = false,planeando=false;
-    private Camera cam;
+    public Camera cam;
     public Transform TargetaSeguir;
-
+        
 
 
     public bool groundedPlayer,entrarUnaVez=true;
@@ -68,6 +69,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
     private void Awake()//la instancia patron singleton
     {
+        
         if (playerInstance == null)
         {
             playerInstance = this;
@@ -85,7 +87,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         vida = 3;
 
         //animPlayer = GetComponent<Animator>();
-        cam = GameObject.Find("Camera").GetComponent<Camera>();
+      
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = true;
 
@@ -244,6 +246,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
         if ((x != 0 || y != 0) && animacionacabada && !atacado &&!isOnSlope)//condiciones para que no se mueva cuando esta atacando o ha sido golpeado
         {
+
             animPlayer.SetFloat("x", x);
             animPlayer.SetFloat("y", y);
             move = (Derecha * x + Adelante * y) * speed;//para que cambie la direcion con la camara y camine
@@ -277,16 +280,23 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
 
 
+        tiempodash += Time.deltaTime;
 
 
 
 
 
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& tiempodash>=1)
         {
+            tiempodash = 0;
+           
             inercia =  transform.forward* 200f;
             invensible = true;
+        
+            foreach (var item in trails)
+            {
+                item.SetActive(true);
+            }
         }
 
 
@@ -302,6 +312,10 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
                 inercia = Vector3.zero;
                 atacado = false;
                 invensible = false;
+                foreach (var item in trails)
+                {
+                    item.SetActive(false);
+                }
             }
             
 
@@ -426,6 +440,10 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             
             
         }
+        if (!groundedPlayer)
+        {
+            particulas[1].gameObject.SetActive(false);
+        }
        
         if (Input.GetButtonDown("Jump") && groundedPlayer)//same
         {
@@ -445,9 +463,14 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
         if (planeando && contadorPlanear%2 ==0)//Planea en par, deja de planear en inpar
         {
             
-            CharacterVelocityY -= 2f * Time.deltaTime;
+            CharacterVelocityY -= 5f * Time.deltaTime;
+            if (CharacterVelocityY<-5)
+            {
+                CharacterVelocityY = -5;
+            }
             animPlayer.SetBool("Planeando", true);
             alaDelta.SetActive(true);
+           // particulas[1].gameObject.SetActive(false);
 
         }
         else
@@ -456,6 +479,7 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
             planeando = false;
             animPlayer.SetBool("Planeando", false);
             alaDelta.SetActive(false);
+           
         }
 
 
@@ -490,20 +514,29 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
 
     public void AtaqueEspada()
     {
-        if (Input.GetMouseButton(0) && contadorAtaque == 1)
-        {
-            animPlayer.SetTrigger("Ataque1");
-        }
+         
         if (Input.GetMouseButton(0) && animacionacabada)
         {
-            contadorAtaque = 0;
+            int ataque = Random.Range(0, 2);
+            switch (ataque)
+            {
+                case 0:
+                    animPlayer.SetTrigger("Ataque");
+                    break;
+                case 1:
+                    animPlayer.SetTrigger("Ataque1");
+                    break;
+                    
+            }
             animacionacabada = false;
-            contadorAtaque++;
-            animPlayer.SetTrigger("Ataque");
+           
+
             
+            espada.SetActive(true);
 
 
             StartCoroutine(Ataque());
+            
 
 
 
@@ -519,8 +552,8 @@ public class PlayerMove : MonoBehaviour, ICambiodeState
     IEnumerator Ataque()
     {
 
-        yield return new WaitForSeconds(0.19f);
-       
+        yield return new WaitForSeconds(0.3f);
+        espada.SetActive(false);
         animacionacabada = true;
     }
 

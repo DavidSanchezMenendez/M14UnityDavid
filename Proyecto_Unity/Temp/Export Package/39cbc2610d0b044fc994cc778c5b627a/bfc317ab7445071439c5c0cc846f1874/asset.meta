@@ -1,0 +1,541 @@
+fileFormatVersion: 2
+guid: bfc317ab7445071439c5c0cc846f1874
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cesped.001
+    second: {fileID: 2100000, guid: 7a6888ffd64e1be4499b61f37aacd37e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cesped.002
+    second: {fileID: 2100000, guid: 3e481632c6bff6d45b2d93070e9e1ad1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coin.001
+    second: {fileID: 2100000, guid: ea0cdc39888df454bb3cb02b83e29379, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Copa del arbol.001
+    second: {fileID: 2100000, guid: 9e095106c1296bc4983aa54a674cc928, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Corteza (tronco)
+    second: {fileID: 2100000, guid: dc4fb91b99c9f6a409eb200951faacdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cuerda.001
+    second: {fileID: 2100000, guid: 01974bf7ef5d68140a109c3c840daaf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Enemy.001
+    second: {fileID: 2100000, guid: 91fa34d2e8fdaab44a0f1568c6b1b617, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz
+    second: {fileID: 2100000, guid: b0f149c8d2b6c7d4484aac12977b9de1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.001
+    second: {fileID: 2100000, guid: 495cbffb94409e84ab597e25d924044b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.002
+    second: {fileID: 2100000, guid: 1ee75169e4ca49646af1170314e53efd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.003
+    second: {fileID: 2100000, guid: 2d393494864cadd41bfe0ce40b38512e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.004
+    second: {fileID: 2100000, guid: e147b1dd038f1e844b16cb71d9d98b51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.005
+    second: {fileID: 2100000, guid: 606d0bca3b88d4f44918dfe4624c06f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.006
+    second: {fileID: 2100000, guid: 7ff466b68eb98b74da5e3e0f55d46d1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.007
+    second: {fileID: 2100000, guid: d5e1968bfcb3755488a787dfc81b784a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.008
+    second: {fileID: 2100000, guid: 18370211aa6d3654d90d333b65701f6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.009
+    second: {fileID: 2100000, guid: dc0d0e581ad2b4c4c90c2e39f3087ca5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.010
+    second: {fileID: 2100000, guid: b25dc9846ec4eff44b077ad12ec65e89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.011
+    second: {fileID: 2100000, guid: fe17fe5235790f04482ccec1598fb644, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.012
+    second: {fileID: 2100000, guid: b5121516862fe9543a2d70f9dbc713d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.013
+    second: {fileID: 2100000, guid: 1e248952c854ef2438930a2dfb8bd262, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.014
+    second: {fileID: 2100000, guid: 43b245001f8c2a245a0f91e7d50f6abb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.015
+    second: {fileID: 2100000, guid: 751799548b4b8724fa0fe860bb9284f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.016
+    second: {fileID: 2100000, guid: 55ff95e6dbf619f4c863e55e36a6c3ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz.017
+    second: {fileID: 2100000, guid: f4a19e4cc1629e445ac97779b6d75dd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro
+    second: {fileID: 2100000, guid: 69e1085ecea611e418a202159043129c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.001
+    second: {fileID: 2100000, guid: bfe8a06aa4a952c4d9618974b6f72f46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.002
+    second: {fileID: 2100000, guid: 071ac30669cffbf4f88dcca962337081, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.003
+    second: {fileID: 2100000, guid: d2340ba38a64526409dc34ba1c20669c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.004
+    second: {fileID: 2100000, guid: 495289e9d34299e439dbb93ed3a3cb89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.005
+    second: {fileID: 2100000, guid: 00101363459953c4aaab3bff594a3b76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.006
+    second: {fileID: 2100000, guid: a7d826cd91394794fb0cc629dcf43be7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.007
+    second: {fileID: 2100000, guid: 03f5a6feb8290ac4d821aff9b6d8910e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.008
+    second: {fileID: 2100000, guid: daff42c88caaf0c4c9f82e0e7922bb1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.009
+    second: {fileID: 2100000, guid: b0c41fef503c54c4385ccb716fcbce3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.010
+    second: {fileID: 2100000, guid: d02bbebcca4a7e6479575af5a0c86b48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.011
+    second: {fileID: 2100000, guid: abd9df68b24bddb4c8f7e929c5b9bd28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.012
+    second: {fileID: 2100000, guid: fa0a31c9f33507c4c97fe2e4d00a9b9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.013
+    second: {fileID: 2100000, guid: d0f436e232664594eb46af1106c1a4e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.014
+    second: {fileID: 2100000, guid: 3542282d569736942b58ec70fd83b223, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.015
+    second: {fileID: 2100000, guid: 7ff9af7e1265bf34d86bfe0e0cac94ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.016
+    second: {fileID: 2100000, guid: 2c360ae2866632e4589e73fc917c8a09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oro.017
+    second: {fileID: 2100000, guid: ffe16b3eac356a94baa2cb2dd91c352c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1
+    second: {fileID: 2100000, guid: 357842ccbc561b3439f02a42f26c2f3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.001
+    second: {fileID: 2100000, guid: 4b26705856d680547af9635ae8c71e9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.002
+    second: {fileID: 2100000, guid: 8625660223581a2409eebc1dbd892d99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.003
+    second: {fileID: 2100000, guid: 1141c40836bd61649bf9e270242060f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.004
+    second: {fileID: 2100000, guid: 701692ef23f833f41b575c1a0e3e43ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.005
+    second: {fileID: 2100000, guid: 973ed1abd0640f947981ff6f059c1e0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.006
+    second: {fileID: 2100000, guid: 29e8c45435c506147a85d3d920a941c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.007
+    second: {fileID: 2100000, guid: 7213e743ecb8c8f468fd8dcae6d37db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.008
+    second: {fileID: 2100000, guid: 9b7264f96559d5944b89af3d9e2d14d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.009
+    second: {fileID: 2100000, guid: c176af1b7c2167048a09d602802b6263, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.010
+    second: {fileID: 2100000, guid: eccd055050b64154f97cd1c0eeb0ae48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.011
+    second: {fileID: 2100000, guid: 2219be6d6832aee43a5595b7be312640, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.012
+    second: {fileID: 2100000, guid: 0d5afe4054868754197ed0f7b9b8efad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.013
+    second: {fileID: 2100000, guid: e2f53c61068c5ec48a50facc466e9af1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.014
+    second: {fileID: 2100000, guid: 1140622c8e400e54db9dacb9a1c613d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.015
+    second: {fileID: 2100000, guid: c6809541c22656a45abb2dbd97a1e7d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.016
+    second: {fileID: 2100000, guid: e629cde87cab6e549a73cd7265357ea2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.017
+    second: {fileID: 2100000, guid: 2264987a055bfb44484f5527040ea726, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 1.018
+    second: {fileID: 2100000, guid: f2d199232eb447649861e98750a160d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2
+    second: {fileID: 2100000, guid: 54374fc9aeb19754ea48d1dbb3102880, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.001
+    second: {fileID: 2100000, guid: 24036dc792c7ad945ab79053f0eb470b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.002
+    second: {fileID: 2100000, guid: 4289d456f1cdc0c439a8956e600a9de0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.003
+    second: {fileID: 2100000, guid: a78bf5dc007338944b8efd34c3c6a0a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.004
+    second: {fileID: 2100000, guid: 833724113864eb243a62a9bbcca939f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.005
+    second: {fileID: 2100000, guid: 2adbb331a81282f4f9926f9d9f43af8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.006
+    second: {fileID: 2100000, guid: d9383b1a6ffbc7740ba05b1f3bedcd71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.007
+    second: {fileID: 2100000, guid: e256e2324c44a5f468366d7290fb9d90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.008
+    second: {fileID: 2100000, guid: f02740b987b6d1f47b3509a4f59e07d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.009
+    second: {fileID: 2100000, guid: 80ff23bce5c21aa46be04536576cec55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.010
+    second: {fileID: 2100000, guid: 85ff98b7b1429fe43b8c1cfea175837d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.011
+    second: {fileID: 2100000, guid: 6899580820b3e594594b18a554d2e400, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.012
+    second: {fileID: 2100000, guid: d563f1ab1663d72499b8566dd1fc2197, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.013
+    second: {fileID: 2100000, guid: 8871491596d4b4542ab5578ce335a530, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.014
+    second: {fileID: 2100000, guid: bd5a18339ab55d34887a19e84bd80a58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.015
+    second: {fileID: 2100000, guid: bea3648fcf4ad08448c6ebf8c9c7d210, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.016
+    second: {fileID: 2100000, guid: ba90cd51c623bdf4383bffc2cb04c365, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.017
+    second: {fileID: 2100000, guid: da71b821c55a120408e9212efb77b0b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piedra 2.018
+    second: {fileID: 2100000, guid: 462b1e9755b74884abe412a540aa3c86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ProBuilderDefault.001
+    second: {fileID: 2100000, guid: c62413718faaf6c4a98dab3ca741ed5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tierra.001
+    second: {fileID: 2100000, guid: 84f40d02c47c79149981e0c2f1a9e0cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tierra.002
+    second: {fileID: 2100000, guid: 650c1dd917de43f4ca235fcc2a5f4c07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tronco 1
+    second: {fileID: 2100000, guid: ee4b32aef76b2084a8130df1ef2a8c37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tronco.006
+    second: {fileID: 2100000, guid: e59f678ef0575f24b8869faf9940125c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: limited time to use
+    second: {fileID: 2100000, guid: 27a20cceab0f3d24eac64f43274d272d, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

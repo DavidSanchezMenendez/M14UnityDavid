@@ -36,7 +36,7 @@ public class EnemigoController : MonoBehaviour
         trail = GetComponentInChildren<TrailRenderer>();
         rb = GetComponent<Rigidbody>();
         
-        newMaterial.SetFloat("Disolver",0.5f);
+      
         //enemyRenderer.material = newMaterial;
     }
     // Update is called once per frame

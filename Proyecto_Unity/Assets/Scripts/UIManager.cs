@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-       cam = GameObject.Find("Camera").GetComponent<CameraMove>();
+       cam = GameObject.Find("CameraPrincipal").GetComponent<CameraMove>();
         Cursor.visible = false;
         UIHabilidades.SetActive(false);
     }
@@ -32,6 +32,9 @@ public class UIManager : MonoBehaviour
         SujetoObservable.instancia.CambiarState(State.DobleSalto);
         MenuHablididades();
         contador++;
+        PlayerMove.playerInstance.alaDelta.SetActive(false);
+        PlayerMove.playerInstance.animPlayer.SetBool("Planeando", false);
+
     }
     public void Planear()
     {
